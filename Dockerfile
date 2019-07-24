@@ -7,7 +7,9 @@ ENV BUILD_DEPS="gettext"  \
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache rsync && \
+    apk add --no-cache \
+            rsync \
+            openssh-client && \ 
     set -x && \
     apk add --update $RUNTIME_DEPS && \
     apk add --virtual build_deps $BUILD_DEPS &&  \
